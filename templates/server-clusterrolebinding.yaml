@@ -13,7 +13,7 @@ metadata:
 roleRef:
   apiGroup: rbac.authorization.k8s.io
   kind: ClusterRole
-  name: system:auth-delegator
+  name: {{ template "vault.fullname" . }}-server-clusterrole
 subjects:
 - kind: ServiceAccount
   name: {{ template "vault.serviceAccount.name" . }}
